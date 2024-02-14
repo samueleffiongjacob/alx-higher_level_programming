@@ -95,12 +95,12 @@ Now use it:
 	...
 	TypeError: a must be an integer
 	
-	>>> add_integer("Holberton", 1)
+	>>> add_integer("Alx", 1)
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
 
-	>>> add_integer("Holberton", "School")
+	>>> add_integer("Alx", "School")
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
@@ -110,7 +110,7 @@ Now use it:
 	...
 	TypeError: b must be an integer
 
-	>>> add_integer("Holberton")
+	>>> add_integer("Alx")
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer

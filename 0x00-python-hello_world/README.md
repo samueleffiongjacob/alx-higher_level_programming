@@ -1,5 +1,5 @@
 # 0x00-python-hello_world
-![alt_text](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/231/48a9fdbd67c84a328a9df9ec8d93b9ac2458ac37721d7d53e51a27fb2bdc5263.jpg)
+![alt_text](https://s3.amazonaws.com/intranet-projects-files/Alxschool-higher-level_programming+/231/48a9fdbd67c84a328a9df9ec8d93b9ac2458ac37721d7d53e51a27fb2bdc5263.jpg)
 
 * The pycodestyle
 * Shell Scripts
@@ -98,7 +98,7 @@ guillaume@ubuntu:~/py/0x00$ export PYCODE='print(f"Best School: {88+10}")'
 
 #task 6
 guillaume@ubuntu:~/py/0x00$ ./6-concat.py
-Welcome to Holberton School!
+Welcome to Alx School!
 
 #It’ll tell you the length of the longest line in a file
 guillaume@ubuntu:~/py/0x00$ wc -l 6-concat.py
