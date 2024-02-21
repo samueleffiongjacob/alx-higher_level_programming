@@ -37,6 +37,5 @@ class Student:
         for key in json:
             try:
                 setattr(self, k, v)
-            except:
+            except Exception:
                 pass
-
