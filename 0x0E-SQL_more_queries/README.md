@@ -94,6 +94,40 @@ Tasks 📃
     20. Best genre
         103-rating_genres.sql: MySQL script that lists all genres in the database hbtn_0d_tvshows_rate by their rating, in order of descending rating.
 
-### author
+### Author
 
-Tewodros Atirsaw Awedew 
+samuel effiong <samueleffiongjacobgmail.com>
+
+[How To Create a New User and Grant Permissions in MySQL](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
+
+[How To Use MySQL GRANT Statement To Grant Privileges To a User](https://www.mysqltutorial.org/mysql-administration/mysql-grant/)
+
+[MySQL constraints and php](https://zetcode.com/mysql/constraints/#google_vignette)
+
+[SQL technique: subqueries](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/subqueries.php)
+
+[Basic query operation: the join](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/join.php)
+
+[SQL technique: multiple joins and the distinct keyword](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/multijoin.php)
+
+[SQL technique: join types](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/jointypes.php)
+
+[SQL technique: union and minus](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/setops.php)
+
+[MySQL Cheat Sheet](https://intellipaat.com/mediaFiles/2019/02/SQL-Commands-Cheat-Sheet.pdf?US)
+
+[A beginner's guide to 7 types of SQL JOINs](https://tableplus.com/blog/2018/09/a-beginners-guide-to-seven-types-of-sql-joins.html)
+
+[A beginner's guide to 7 types of SQL JOINs](https://tableplus.com/blog/2018/09/a-beginners-guide-to-seven-types-of-sql-joins.html)
+
+[mysql](https://www.youtube.com/watch?v=yPu6qV5byu4)
+
+[SQL Style Guide](https://www.sqlstyle.guide/)
+
+[mysql doc](https://dev.mysql.com/doc/refman/8.0/en/sql-statements.html)
+
+[Database Design in DBMS Tutorial: Learn Data Modeling](https://www.guru99.com/database-design.html)
+
+[DBMS Normalization: 1NF, 2NF, 3NF Database Example](https://www.guru99.com/database-normalization.html)
+
+[What is ER Modeling? Learn with Example](https://www.guru99.com/er-modeling.html)
