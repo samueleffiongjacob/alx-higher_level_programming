@@ -160,4 +160,13 @@ $ cat 16-no_link.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 # go to UTF8
 $ cat 100-move_to_utf8.sql | mysql -hlocalhost -uroot -p 
 $ cat 5-full_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# temperature average
+ cat 101-avg_temperatures.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+ # temp1 list
+ $ cat 102-top_city.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+ #temp2 max
+ $ cat 103-max_state.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
 ```

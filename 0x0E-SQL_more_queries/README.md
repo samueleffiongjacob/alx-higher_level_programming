@@ -1,5 +1,7 @@
 # SQL - More queries
 
+![privilege sql](../image/MySQL-Grant-Privilege-Level.png)
+
 In this project, I continued to practicing SQL queries, working with permissoins, joins, and constraints.
 Usage 🐬
 
@@ -94,7 +96,9 @@ Tasks 📃
     20. Best genre
         103-rating_genres.sql: MySQL script that lists all genres in the database hbtn_0d_tvshows_rate by their rating, in order of descending rating.
 
-### Author
+![sql cheat](../image/sql%20cheatchat.png)
+
+## Author
 
 samuel effiong <samueleffiongjacobgmail.com>
 
