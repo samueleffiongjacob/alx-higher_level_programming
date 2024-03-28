@@ -1,6 +1,6 @@
 # SQL - Introduction
-###  Tasks
 
+## Tasks
 
     0. List databases
         0-list_databases.sql: MySQL script that lists all databases.
@@ -104,3 +104,60 @@ samuel effiong <samueleffiongjacobgmail.com>
 [installing MySQL in Ubuntu 20.04](https://phoenixnap.com/kb/install-mysql-ubuntu-20-04)
 
 [video](https://www.youtube.com/watch?v=FR4QIeZaPeM)
+
+```bash 
+# Mysql comment
+$ service mysql start
+# list db
+$ cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
+$ cat 0-list_databases.sql | mysql -hlocalhost -uroot -p
+# create db
+$ cat 1-create_database_if_missing.sql | mysql -hlocalhost -uroot -p
+# remove db
+$  cat 2-remove_database.sql | mysql -hlocalhost -uroot -p
+# show table
+$ cat 3-list_tables.sql | mysql -hlocalhost -uroot -p mysql
+# create first tables in a database collection
+$ cat 4-first_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# show the tables in specified db
+$ cat 3-list_tables.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# to show full discription of db
+$ cat 5-full_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# list all tables
+$ cat 6-list_values.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# first add 
+$ cat 7-insert_value.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+#  count 89
+$ cat 8-count_89.sql | mysql -hlocalhost -uroot -p hbtn_0c_0 | tail -1
+# full creation
+$ cat 9-full_creation.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+# list my best record
+$ cat 10-top_score.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# select the best
+$ cat 11-best_score.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# cheating is bad
+$  cat 12-no_cheating.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# score too low
+$ cat 13-change_class.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# avaerage score
+$ cat 14-average.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# number by score
+$ cat 15-groups.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# say my name
+$ cat 16-no_link.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+
+# go to UTF8
+$ cat 100-move_to_utf8.sql | mysql -hlocalhost -uroot -p 
+$ cat 5-full_table.sql | mysql -hlocalhost -uroot -p hbtn_0c_0
+```
