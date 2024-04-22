@@ -34,4 +34,5 @@
     - [var, let and const](https://www.youtube.com/watch?v=sjyJBL5fkp8)
     - [JavaScript Tutorial](https://www.youtube.com/watch?v=vZBCTc9zHtI)
     - [Modern JS](https://github.com/mbeaudru/modern-js-cheatsheet)
-    [process.argv](https://nodejs.org/api/process.html#process_process_argv)
+    - [process.argv](https://nodejs.org/api/process.html#process_process_argv)
+    - [Simple Intro to NodeJS Module Scope ](http://51elliot.blogspot.com/2012/01/simple-intro-to-nodejs-module-scope.html)
