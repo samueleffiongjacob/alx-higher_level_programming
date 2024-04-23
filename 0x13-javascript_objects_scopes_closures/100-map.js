@@ -2,5 +2,9 @@
 
 const list = require('./Helper/100-data').list;
 
-console.log(list);
-console.log(list.map((x, i) => x * i));
+const new_list = list
+
+const map = list.map((x, i) => x * i)
+
+console.log( new_list);
+console.log(map);
