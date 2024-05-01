@@ -17,16 +17,20 @@ if __name__ == '__main__':
 
     # Database connection information
     username = sys.argv[1]
-    password = sys.argv[2] if len(sys.argv) > 2 else '' # Use an empty string if no password provided
+    # Use an empty string if no password provided
+    password = sys.argv[2] if len(sys.argv) > 2 else ''
     database = sys.argv[3]
     hostname = 'localhost'
     port = 3306
 
     # Create the engine
 
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(username, password, database, hostname, port))
-    
+    engine = create_engine(
+        'mysql+mysqldb://{}:{}@{}:{}/{}'.format(
+            username, password, hostname, port, database
+        )
+    )
+
     Session = sessionmaker(bind=engine)
     s = Session()
 

@@ -14,13 +14,19 @@ import MySQLdb
 
 if __name__ == "__main__":
     mySQL_u = sys.argv[1]
-    mySQL_p = sys.argv[2] if len(sys.argv) > 2 else ''  # Use an empty string if no password provided
+    # Use an empty string if no password provided
+    mySQL_p = sys.argv[2] if len(sys.argv) > 2 else ''
     db_name = sys.argv[3]
 
     searched_name = sys.argv[4]
 
     # By default, it will connect to localhost:3306
-    db = MySQLdb.connect(user=mySQL_u, passwd=mySQL_p, db=db_name, host='localhost', port=3306)
+    db = MySQLdb.connect(
+        user=mySQL_u,
+        passwd=mySQL_p,
+        db=db_name,
+        host='localhost',
+        port=3306)
     cur = db.cursor()
 
     cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id",

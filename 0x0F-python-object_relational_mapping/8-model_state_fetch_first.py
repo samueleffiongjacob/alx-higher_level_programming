@@ -9,12 +9,12 @@ from sqlalchemy.orm import sessionmaker
 from model_state import Base, State
 
 
-
 if __name__ == "__main__":
     import sys
     # Database connection information
     username = sys.argv[1]
-    password = sys.argv[2] if len(sys.argv) > 2 else '' # Use an empty string if no password provided
+    # Use an empty string if no password provided
+    password = sys.argv[2] if len(sys.argv) > 2 else ''
     database = sys.argv[3]
     hostname = 'localhost'
     port = 3306

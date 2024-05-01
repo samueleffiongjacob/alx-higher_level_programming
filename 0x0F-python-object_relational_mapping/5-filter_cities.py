@@ -14,7 +14,9 @@ import MySQLdb
 
 if __name__ == "__main__":
     if len(sys.argv) != 5:
-        print("Usage: {} username password database state_name".format(sys.argv[0]))
+        print(
+            "Usage: {} username password database state_name".format(
+                sys.argv[0]))
         sys.exit(1)
 
     mySQL_u = sys.argv[1]
@@ -24,7 +26,12 @@ if __name__ == "__main__":
 
     # Connect to the MySQL server
     try:
-        db = MySQLdb.connect(user=mySQL_u, passwd=mySQL_p, db=db_name, host='localhost', port=3306)
+        db = MySQLdb.connect(
+            user=mySQL_u,
+            passwd=mySQL_p,
+            db=db_name,
+            host='localhost',
+            port=3306)
     except MySQLdb.Error as e:
         print("MySQL connection error:", e)
         sys.exit(1)
@@ -33,7 +40,13 @@ if __name__ == "__main__":
     cur = db.cursor()
 
     # Prepare the SQL query with parameterized values
-    query = "SELECT cities.name FROM cities INNER JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC"
+    query = """
+    SELECT cities.name
+    FROM cities
+    INNER JOIN states ON cities.state_id = states.id
+    WHERE states.name = %s
+    ORDER BY cities.id ASC
+    """
 
     # Execute the query with the provided state name
     cur.execute(query, (state_name,))

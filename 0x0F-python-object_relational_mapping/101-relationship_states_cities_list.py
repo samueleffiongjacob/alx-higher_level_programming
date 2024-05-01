@@ -20,7 +20,7 @@ if __name__ == "__main__":
     mySQL_u = sys.argv[1]
     mySQL_p = sys.argv[2]
     db_name = sys.argv[3]
-    port = 3306 # Specify the port
+    port = 3306  # Specify the port
 
     # Construct the engine URL without using the URL constructor
     url = f"mysql+mysqldb://{mySQL_u}:{mySQL_p}@localhost:3306/{db_name}"
