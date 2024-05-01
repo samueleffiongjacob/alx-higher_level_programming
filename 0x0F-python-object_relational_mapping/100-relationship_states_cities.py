@@ -22,7 +22,7 @@ if __name__ == "__main__":
     db_name = sys.argv[3]
 
     url = {'drivername': 'mysql+mysqldb', 'host': 'localhost',
-           'username': mySQL_u, 'password': mySQL_p, 'database': db_name}
+           'username': mySQL_u, 'password': mySQL_p, 'database': db_name, 'port': 3306, 'query': {}}
 
     engine = create_engine(URL(**url), pool_pre_ping=True)
     Base.metadata.create_all(engine)

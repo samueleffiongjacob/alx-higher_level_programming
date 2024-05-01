@@ -15,8 +15,18 @@ if __name__ == '__main__':
     from sqlalchemy.orm import sessionmaker
     from model_state import Base, State
 
+    # Database connection information
+    username = sys.argv[1]
+    password = sys.argv[2] if len(sys.argv) > 2 else '' # Use an empty string if no password provided
+    database = sys.argv[3]
+    hostname = 'localhost'
+    port = 3306
+
+    # Create the engine
+
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+                           .format(username, password, database, hostname, port))
+    
     Session = sessionmaker(bind=engine)
     s = Session()
 
@@ -24,3 +34,6 @@ if __name__ == '__main__':
         print(row.id, end="")
         print(': ', end="")
         print(row.name)
+
+    # Close the session
+    s.close()

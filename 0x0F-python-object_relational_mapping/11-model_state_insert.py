@@ -9,13 +9,21 @@ script that adds the State object “Louisiana” to the database hbtn_0e_6_usa
 """
 
 if __name__ == '__main__':
-    import sys
+    from sys import argv
     from sqlalchemy import create_engine
     from sqlalchemy.orm import sessionmaker
     from model_state import Base, State
 
+    # Database connection information
+    username = argv[1]
+    password = argv[2] if len(argv) > 2 else '' # Use an empty string if no password provided
+    database = argv[3]
+    hostname = 'localhost'
+    port = 3306
+
+
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
-                           .format(sys.argv[1], sys.argv[2], sys.argv[3]))
+                           .format(username, password, database, hostname, port))
     Session = sessionmaker(bind=engine)
     s = Session()
 

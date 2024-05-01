@@ -36,6 +36,11 @@ At the end of this project, I am expected to be able to explain to anyone, witho
 - [Python Virtual Environments: A primer](https://realpython.com/python-virtual-environments-a-primer/)
 
 ```bash
+# install venv and start
+$ sudo apt-get install python3.8-venv
+$ python3 -m venv venv
+$ source venv/bin/activate
+
 # to start venv on windows
 $ mkdir client-old
 $ cd client-old
@@ -74,7 +79,85 @@ sqlparse   0.4.2
 # to deactvate
 (client-old) deactivate
 
+# Install MySQLdb module version 2.0.x
 # databae on linux must always be startup
-$  service mysql start  
+$ sudo apt-get install python3-dev
+$ sudo apt-get install libmysqlclient-dev
+$ sudo apt-get install zlib1g-dev
+$ sudo pip3 install mysqlclient
 
+$ python3
+>>> import MySQLdb
+>>> MySQLdb.version_info 
+(2, 0, 3, 'final', 0)
+
+# Install SQLAlchemy module version 1.4.x
+$ sudo pip3 install SQLAlchemy
+...
+$ python3
+>>> import sqlalchemy
+>>> sqlalchemy.__version__ 
+'1.4.22'
+# start up mysql service
+$  service mysql start  
+sudo mysql -u root # I had to use "sudo" since it was a new installation
+
+mysql> USE mysql;
+mysql> SELECT User, Host, plugin FROM mysql.user;
+
++------------------+-----------------------+
+| User             | plugin                |
++------------------+-----------------------+
+| root             | auth_socket           |
+| mysql.sys        | mysql_native_password |
+| debian-sys-maint | mysql_native_password |
++------------------+-----------------------+
+
+
+
+# On some systems, like Ubuntu, MySQL is using the Unix auth_socket plugin by default.
+
+# Basically it means that: db_users using it, will be "authenticated" by the system user credentials. You can see if your root user is set up like this by doing the following:
+
+$ sudo mysql -u root # I had to use "sudo" since it was a new installation
+
+mysql> USE mysql;
+mysql> SELECT User, Host, plugin FROM mysql.user;
+
++------------------+-----------------------+
+| User             | plugin                |
++------------------+-----------------------+
+| root             | auth_socket           |
+| mysql.sys        | mysql_native_password |
+| debian-sys-maint | mysql_native_password |
++------------------+-----------------------+
+
+# As you can see in the query, the root user is using the auth_socket plugin.
+
+# There are two ways to solve this:
+
+    #You can set the root user to use the mysql_native_password plugin
+    #You can create a new db_user with you system_user (recommended)
+$ sudo service mysql restart
+
+
+#Option 1:
+$ sudo mysql -u root # I had to use "sudo" since it was a new installation
+
+mysql> USE mysql;
+mysql> UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+mysql> FLUSH PRIVILEGES;
+mysql> exit;
+
+# Option 2: (replace YOUR_SYSTEM_USER with the username you have)
+$ sudo mysql -u root # I had to use "sudo" since it was a new installation
+
+mysql> USE mysql;
+mysql> CREATE USER 'YOUR_SYSTEM_USER'@'localhost' IDENTIFIED BY 'YOUR_PASSWD';
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'YOUR_SYSTEM_USER'@'localhost';
+mysql> UPDATE user SET plugin='auth_socket' WHERE User='YOUR_SYSTEM_USER';
+mysql> FLUSH PRIVILEGES;
+mysql> exit;
+
+$ sudo service mysql restart
 ```

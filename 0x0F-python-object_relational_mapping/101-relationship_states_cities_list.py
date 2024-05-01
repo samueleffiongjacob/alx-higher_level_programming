@@ -20,11 +20,12 @@ if __name__ == "__main__":
     mySQL_u = sys.argv[1]
     mySQL_p = sys.argv[2]
     db_name = sys.argv[3]
+    port = 3306 # Specify the port
 
-    url = {'drivername': 'mysql+mysqldb', 'host': 'localhost',
-           'username': mySQL_u, 'password': mySQL_p, 'database': db_name}
+    # Construct the engine URL without using the URL constructor
+    url = f"mysql+mysqldb://{mySQL_u}:{mySQL_p}@localhost:3306/{db_name}"
 
-    engine = create_engine(URL(**url), pool_pre_ping=True)
+    engine = create_engine(url, pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
     session = Session(bind=engine)

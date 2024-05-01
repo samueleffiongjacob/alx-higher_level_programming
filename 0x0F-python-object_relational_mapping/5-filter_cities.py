@@ -13,22 +13,41 @@ import sys
 import MySQLdb
 
 if __name__ == "__main__":
+    if len(sys.argv) != 5:
+        print("Usage: {} username password database state_name".format(sys.argv[0]))
+        sys.exit(1)
+
     mySQL_u = sys.argv[1]
     mySQL_p = sys.argv[2]
     db_name = sys.argv[3]
-
     state_name = sys.argv[4]
 
-    # By default, it will connect to localhost:3306
-    db = MySQLdb.connect(user=mySQL_u, passwd=mySQL_p, db=db_name)
+    # Connect to the MySQL server
+    try:
+        db = MySQLdb.connect(user=mySQL_u, passwd=mySQL_p, db=db_name, host='localhost', port=3306)
+    except MySQLdb.Error as e:
+        print("MySQL connection error:", e)
+        sys.exit(1)
+
+    # Create a cursor object
     cur = db.cursor()
 
-    cur.execute("SELECT c.name \
-                 FROM cities c INNER JOIN states s \
-                 ON c.state_id = s.id WHERE s.name = %s\
-                 ORDER BY c.id", (state_name, ))
+    # Prepare the SQL query with parameterized values
+    query = "SELECT cities.name FROM cities INNER JOIN states ON cities.state_id = states.id WHERE states.name = %s ORDER BY cities.id ASC"
+
+    # Execute the query with the provided state name
+    cur.execute(query, (state_name,))
+
+    # Fetch all rows and print the city names
     rows = cur.fetchall()
 
-    for i in range(len(rows)):
-        print(rows[i][0], end=", " if i + 1 < len(rows) else "")
-    print("")
+    # print vertical
+    # for row in rows:
+    #     print(row[0])
+
+    # Concatenate city names into a single string separated by commas
+    city_names = ", ".join(row[0] for row in rows)
+    print(city_names)
+    # Close cursor and connection
+    cur.close()
+    db.close()

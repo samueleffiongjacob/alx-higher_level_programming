@@ -11,9 +11,11 @@ if __name__ == '__main__':
     username = argv[1]
     password = argv[2]
     db_name = argv[3]
+    hostname = 'localhost'
+    port = 3306
 
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'
-                           .format(username, password, db_name))
+                           .format(username, password, db_name, hostname, port))
 
     Session = sessionmaker(bind=engine)
     session = Session()
