@@ -35,7 +35,6 @@ At the end of this project, I am expected to be able to explain to anyone, witho
 
 - [Python Virtual Environments: A primer](https://realpython.com/python-virtual-environments-a-primer/)
 
-
 ```bash
 # to start venv on windows
 $ mkdir client-old
@@ -75,6 +74,7 @@ sqlparse   0.4.2
 # to deactvate
 (client-old) deactivate
 
-
+# databae on linux must always be startup
+$  service mysql start  
 
 ```
